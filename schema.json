@@ -1,0 +1,35 @@
+{
+  "name": "stack-management",
+  "displayName": "yourdisplayname",
+  "version": "0.1.0",
+  "namespace": "pulumi-initech",
+  "meta": {
+    "moduleFormat": "(.*)"
+  },
+  "language": {
+    "go": {
+      "importBasePath": "github.com/pulumi-initech/pulumi-stack-management/sdk/go/stackmanagement"
+    }
+  },
+  "config": {
+    "variables": {
+      "scream": {
+        "type": "boolean"
+      }
+    }
+  },
+  "provider": {
+    "type": "object",
+    "inputProperties": {
+      "scream": {
+        "type": "boolean"
+      }
+    }
+  },
+  "resources": {
+    "stack-management:index:StackManagement": {
+      "type": "object",
+      "isComponent": true
+    }
+  }
+}
