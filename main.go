@@ -19,7 +19,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error: %s", err.Error())
 		os.Exit(1)
 	}
-	err = provider.Run(context.Background(), "stack-management", "0.1.0")
+	err = provider.Run(context.Background(), "stack-management", "0.0.4")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s", err.Error())
 		os.Exit(1)
@@ -41,6 +41,7 @@ func provider() (p.Provider, error) {
 				ImportBasePath: "github.com/pulumi-initech/pulumi-stack-management/sdk/go/stackmanagement",
 			},
 		}).
+		WithPluginDownloadURL("https://github.com/pulumi-initech/pulumi-stack-management/releases/download/v0.0.4/pulumi-stack-management-v0.0.4-macOS-arm64.gz").
 		Build()
 }
 

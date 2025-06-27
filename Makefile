@@ -1,5 +1,3 @@
 .PHONY: generate
-generate:
+schema:
 	pulumi package get-schema . > schema.json
-	pulumi package gen-sdk ./schema.json --language go
-	pulumi package gen-sdk ./schema.json --language typescript
