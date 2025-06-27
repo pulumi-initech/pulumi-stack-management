@@ -35,5 +35,5 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
-          file: ./release/*
+          file: ./release/pulumi-stack-management*
           file_glob: true
