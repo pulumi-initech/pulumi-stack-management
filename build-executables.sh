@@ -34,10 +34,6 @@ do
     GOOS=${platform_split[0]}
     GOARCH=${platform_split[1]}
 
-    if [ $os = "darwin" ]; then
-        os="macOS"
-    fi
-
     # output_name=$package_name'-'$version'-'$os'-'$GOARCH
     output_name='pulumi-'${kind}'-'${package_name}'-'${version}'-'${os}'-'${GOARCH}
     zip_name=$output_name
