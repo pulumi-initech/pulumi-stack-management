@@ -60,7 +60,7 @@ do
         rm $output_name
     else
         chmod a+x $output_name
-        tar -cvzf $output_name.tar.gz .
+        tar -cvzf $output_name.tar.gz $output_name
     fi
     popd > /dev/null
 done
