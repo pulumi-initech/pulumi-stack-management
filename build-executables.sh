@@ -39,7 +39,7 @@ do
     fi
 
     # output_name=$package_name'-'$version'-'$os'-'$GOARCH
-    output_name='pulumi-'${kind}'-'${package_name}'-v'${version}'-'${os}'-'${GOARCH}.tar.gz
+    output_name='pulumi-'${kind}'-'${package_name}'-'${version}'-'${os}'-'${GOARCH}
     zip_name=$output_name
     if [ $os = "windows" ]; then
         output_name+='.exe'
@@ -60,7 +60,7 @@ do
         rm $output_name
     else
         chmod a+x $output_name
-        tar -cxvf $output_name .
+        tar -cvzf $output_name.tar.gz .
     fi
     popd > /dev/null
 done
