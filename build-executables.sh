@@ -10,7 +10,8 @@ if [[ -z "$version" ]]; then
 fi
 
 github_owner=pulumi-initech
-package_name=pulumi-stack-management
+package_name=stack-management
+kind=resource
 
 #
 # The full list of the platforms is at: https://golang.org/doc/install/source#environment
@@ -37,7 +38,8 @@ do
         os="macOS"
     fi
 
-    output_name=$package_name'-'$version'-'$os'-'$GOARCH
+    # output_name=$package_name'-'$version'-'$os'-'$GOARCH
+    output_name='pulumi-'${kind}'-'${package_name}'-v'${version}'-'${os}'-'${GOARCH}.tar.gz
     zip_name=$output_name
     if [ $os = "windows" ]; then
         output_name+='.exe'
@@ -58,7 +60,7 @@ do
         rm $output_name
     else
         chmod a+x $output_name
-        gzip $output_name
+        tar -cxvf $output_name .
     fi
     popd > /dev/null
 done
